@@ -1,0 +1,33 @@
+{%  extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="shadow card">
+               <img class="movie_img" src="{{movie.img.url}}">
+                <h2 class="text-center" >Year::{{movie.year}}</h2>
+            </div>
+        </div>
+        <div class="col-md-9">
+           <div class="shadow body">
+               <h1 class="text-decoration-underline">{{movie.name}}</h1>
+               <h4>{{movie.dec}}</h4>
+
+               {% if user.is_authenticated %}
+               <a class="btn btn-warning"  href="{% url 'movieapp:update' movie.id %}">update</a>
+               <a class="btn btn-danger" href="{% url 'movieapp:delete' movie.id %}">delete</a>
+               <a class="btn btn-dark" href="{% url 'movieapp:index'%}" >Back to Home</a>
+               {% else %}
+               <a class="btn btn-dark" href="{% url 'movieapp:index'%}" >Back to Home</a>
+               <a class="btn btn-primary" href="{% url 'credentialapp:login' %}">Login</a>
+               {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="footer-bottom">
+    <marquee behavior="scroll" direction="left">
+     <p>&copy; 2023 ABC Company . All rights reserved. | Designed by Sreejith_Sundar</p>
+    </marquee>
+  </div>
+{% endblock %}

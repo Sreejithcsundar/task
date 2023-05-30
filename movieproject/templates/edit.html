@@ -1,0 +1,15 @@
+{%  extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit">
+  </form>
+</div>
+ <div class="footer-bottom">
+    <marquee behavior="scroll" direction="left">
+     <p>&copy; 2023 ABC Company . All rights reserved. | Designed by Sreejith_Sundar</p>
+    </marquee>
+  </div>
+{% endblock %}

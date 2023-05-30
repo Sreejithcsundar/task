@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register page</title>
+</head>
+<body>
+<h1>REGISTRATION</h1>
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="name"><br>
+    <input type="email" name="email" placeholder="email"><br>
+    <input type="password" name="password" placeholder="password"><br>
+    <input type="password" name="password1" placeholder="again password"><br>
+    <input type="submit">
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+ <div class="footer-bottom">
+    <marquee behavior="scroll" direction="left">
+     <p>&copy; 2023 ABC Company . All rights reserved. | Designed by Sreejith_Sundar</p>
+    </marquee>
+  </div>
+</body>
+</html>

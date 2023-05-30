@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid w-auto h-auto" id="body">
+    <div class="row">
+        {% for i in movie_list %}
+        <div class="col-md-3">
+            <div class="shadow card w-auto h-100">
+                <img  class="img w-auto h-100" src="{{i.img.url}}" alt="...">
+                <h2 class="card-title fs-4">{{i.name}}</h2>
+                <p class="card-text">{{i.year}}</p>
+                <a href="{% url 'movieapp:detail' i.id %}" class="btn btn-success" style="height:60px; width:120px; border-radius:30px; ">Go</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+ <div class="footer-bottom">
+    <marquee behavior="scroll" direction="left">
+     <p>&copy; 2023 ABC Company . All rights reserved. | Designed by Sreejith_Sundar</p>
+    </marquee>
+  </div>
+{% endblock %}
