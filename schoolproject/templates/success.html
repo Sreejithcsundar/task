@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Success page</title>
+    <link rel="stylesheet" href="{% static 'css/customstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+     <link rel="stylesheet" href="{% static 'css/cus.css' %}">
+</head>
+<body>
+<div class="shadow card ctr3" style="background-image:url({% static 'img/banner2.jpg' %})">
+    <div class="shadow-card">
+      <h1>Order Confirmed</h1>
+      <p>Thank you for submitting the form. Your order has been confirmed.</p>
+      <a href="{% url 'index' %}" class="btn btn-outline-primary">Home</a>
+    </div>
+</div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

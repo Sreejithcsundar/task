@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Student</title>
+     <link rel="stylesheet" href="{% static 'css/customstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/cus.css' %}">
+
+</head>
+<body>
+
+   <div class="submission">
+
+    <div class="container ctr1" >
+        <h2 style="text-align:center; color:white; text-transform: uppercase;">Form Submission<hr></h2>
+     <div class="shadow card ctr2" style="background-image:url({% static 'img/banner2.jpg' %})">
+      <form method="POST" action="{% url 'create_student' %}">
+      {% csrf_token %}
+          <div class="inputbox" id="name"><label class="">Name:</label>   {{form.name}}</div>
+          <div class="inputbox" id="dob"><label  class="">DOB:</label>    {{ form.dob }}</div>
+          <div class="inputbox" id="age"><label  class="">Age:</label>    {{form.age}}</div>
+          <div class="inputbox" id="gender"><label class="">Gender</label>{{form.gender}}</div>
+          <div class="inputbox" id="phone"><label  class="">Phone Number:</label>{{form.phone_number}}</div>
+          <div class="inputbox" id="email"><label  class="">Email:</label>   {{form.email}}</div>
+          <div class="inputbox" id="address"><label class="">Address:</label>{{form.address}}</div>
+          <div class="inputbox" id="department"><label class="">Department:</label>{{form.department}}</div>
+          <div class="inputbox" id="course"><label  class="">Course:</label> {{form.course}}</div>
+          <div class="inputbox" id="purpose"><label class="">Purpose:</label>{{form.purpose}}</div>
+          <div class="inputbox" id="material"><label class="">Material Provide:</label>{{ form.materials_provide}} </div>
+
+        <div class="button-container">
+          <button type="submit" class="btn btn-success" onclick="return alert('Order Confirmed')">Submit</button>
+          <a href="{% url 'logout' %}" type="button" class="btn btn-danger">Logout</a>
+        </div>
+      </form>
+     </div>
+    </div>
+   </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
